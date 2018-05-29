@@ -1,0 +1,25 @@
+
+
+allow-hotplug eth0 #start interface <interface_name> when the kernel detects a hotplug event from the interface  
+allow-hotplug eth1 #start interface <interface_name> when the kernel detects a hotplug event from the interface
+allow-hotplug eth2 #start interface <interface_name> when the kernel detects a hotplug event from the interface 
+allow-hotplug eth3 #start interface <interface_name> when the kernel detects a hotplug event from the interface
+
+iface eth0 inet static
+     address 192.168.47.131
+     netmask 255.255.255.0
+     gateway 192.168.47.2
+
+### this way interfaces can be started without an IP address
+## $IFACE variable is evaluated to the name of currently processed interface
+iface eth1 inet manual
+    pre-up ifconfig $IFACE up
+    post-down ifconfig $IFACE down
+
+iface eth2 inet manual
+    pre-up ifconfig $IFACE up
+    post-down ifconfig $IFACE down 
+
+iface eth3 inet manual
+    pre-up ifconfig $IFACE up
+    post-down ifconfig $IFACE down 
