@@ -1,6 +1,8 @@
 apt-get update
 apt-get install -y apache2
 
+echo 'RS1' > /var/www/html/index.html
+
 cat ./interfaces.rs1 > /etc/network/interfaces
 ifup eth1
 ifup eth2

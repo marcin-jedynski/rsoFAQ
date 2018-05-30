@@ -10,3 +10,5 @@ ifup eth1
 ifup eth2
 ifup eth3
 sysctl -w net.ipv4.ip_forward=1
+
+tail -f /var/log/messages
