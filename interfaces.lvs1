@@ -1,6 +1,14 @@
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
 
+source /etc/network/interfaces.d/*
 
-allow-hotplug eth0 #start interface <interface_name> when the kernel detects a hotplug event from the interface  
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+allow-hotplug eth0
 allow-hotplug eth1 #start interface <interface_name> when the kernel detects a hotplug event from the interface
 allow-hotplug eth2 #start interface <interface_name> when the kernel detects a hotplug event from the interface 
 allow-hotplug eth3 #start interface <interface_name> when the kernel detects a hotplug event from the interface
