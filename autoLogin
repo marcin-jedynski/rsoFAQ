@@ -1,0 +1,10 @@
+nano /lib/systemd/system/getty@.service
+
+  ExecStart=-/sbin/agetty --noclear %I $TERM
+  ExecStart=-/sbin/agetty --noclear -a root %I $TERM
+
+
+ sed -i s/'--noclear'/'--noclear -a root'/g /lib/systemd/system/getty@.service
+
+
+  echo 'servername' > /etc/hostname
